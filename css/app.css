@@ -1,0 +1,141 @@
+
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color: rgb(90, 193, 251);
+    font-family: Tahoma;
+}
+
+.full {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 10vmax;
+}
+
+table {
+    background-color: rgb(44, 57, 53);
+    border-spacing: 0;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    left:50%;
+    top:50%;
+    border-style: solid;
+    border-color: rgb(60, 163, 221);
+    border-width: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(60, 163, 221);
+    z-index: 10;
+}
+
+button {
+    background-color: rgb(60, 163, 221);
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(90, 193, 251);
+}
+
+td.tile {
+    margin: 0;
+    padding: 0;
+    border-style: solid;
+    border-color: rgb(44, 57, 53);
+    border-width: 1px;
+    height: calc(100vmin/9);
+    width: calc(100vmin/9);
+    border-radius: 5px;
+}
+
+td.tile:hover {
+    background-color: rgb(117, 152, 141);
+}
+
+.bg {
+    background-color: rgb(67, 93, 85);
+    color: rgb(67, 93, 85);
+}
+
+@keyframes Drop {
+    0% {top:-100vh}
+    100% {top: 0px}
+}
+
+@keyframes Idle {
+    0% {transform:rotate(0deg)}
+    25% {transform:rotate(10deg)}
+    50% {transform:rotate(0deg)}
+    75% {transform:rotate(-10deg)}
+    100% {transform:rotate(0deg)}
+}
+
+@keyframes Flip {
+    0% {transform: rotateY(0deg);}
+    50% {transform: rotateY(181deg);}
+    100% {transform: rotateY(0deg);}
+}
+
+div.token {
+    width:100%;
+    height:100%;
+    position: relative;
+    animation: Drop 1s, Idle 3s infinite;
+}
+
+.token.red {
+    background: url(../resources/Red.png) no-repeat;
+    background-size: contain;
+}
+
+.token.wred {
+    background: url(../resources/wRed.png) no-repeat;
+    background-size: contain;
+    animation: Flip 0.5s, Idle 1s infinite;
+}
+
+.token.blue {
+    background: url(../resources/Blue.png) no-repeat;
+    background-size: contain;
+}
+
+.token.wblue {
+    background: url(../resources/wBlue.png) no-repeat;
+    background-size: contain;
+    animation: Flip 0.5s, Idle 1s infinite;
+}
+
+label {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    text-align: center;
+    font-size: 10vh;
+    color: white;
+
+}
+
+label.blue {
+    color: blue;
+    animation: Flip 0.5s;
+}
+
+label.red {
+    color: red;
+    animation: Flip 0.5s;
+}
+
+.leave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    font-size: 5vh;
+}
